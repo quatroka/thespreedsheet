@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: thespreedsheet_production
-  username: thespreedsheet
-  password: <%= ENV['THESPREEDSHEET_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  # database: thespreedsheet_production
+  # username: thespreedsheet
+  # password: <%= ENV['THESPREEDSHEET_DATABASE_PASSWORD'] %>
