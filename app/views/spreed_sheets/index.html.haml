@@ -1,0 +1,9 @@
+= form_tag spreedsheets_import_path,  multipart: true do
+  .file-field.input-field
+    .btn
+      %span File
+      = file_field_tag :file
+    .file-path-wrapper
+      = text_field_tag '', { class: 'file-path validate' }
+  .input_field
+    = submit_tag 'import'

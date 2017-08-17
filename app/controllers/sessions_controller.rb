@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email].downcase)
     if user && user.authenticate(params[:password])
       log_in user
-      redirect_to user
+      redirect_to controller: 'spreed_sheets', action: 'index'
     else
       # flash[:danger] = 'Invalid email/password combination' # Not quite right!
       render 'layouts/index'
