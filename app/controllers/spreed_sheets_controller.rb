@@ -1,4 +1,7 @@
 class SpreedSheetsController < ApplicationController
+  before_action :signed_in_user
+  before_action :current_user
+
   def index; end
 
   def import

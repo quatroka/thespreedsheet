@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :singed_in_user
-  before_action :correct_user
+  before_action :signed_in_user
+  before_action :current_user
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
