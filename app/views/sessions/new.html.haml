@@ -1,0 +1,13 @@
+.row
+  = form_tag post_login_path, method: :post do
+    .row
+      .input-field.col.s12
+        = email_field_tag 'email', params[:email], { type: 'email', id: 'email', class: 'validate' }
+        %label{'data-error' => 'Wrong', 'data-success': 'Correct', for: 'email' } Email
+    .row
+      .input-field.col.s12
+        = password_field_tag 'password', params[:password], { type: 'password', id: 'password', class: 'validate' }
+        %label{ for: 'password' } Password
+    .row
+      .col.s12
+        = submit_tag 'Login', { class: 'waves-effect waves-light btn'}
