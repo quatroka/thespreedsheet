@@ -11,3 +11,22 @@
     .col.s12
       .input_field.center
         = submit_tag 'import', { class: 'btn' }
+
+.row
+  .col.s12
+    %table.highlight.bordered
+      %thead
+        %tr
+          %th Nome
+          %th Email
+          %th Telefone
+      %tbody
+        - @spreedsheets.each do |spreedsheet| 
+          %tr
+            %td 
+              = spreedsheet[:nome]
+            %td 
+              = spreedsheet[:email]
+            %td 
+              = spreedsheet[:telefone]
+  
