@@ -20,6 +20,7 @@
           %th Nome
           %th Email
           %th Telefone
+          %th Options
       %tbody
         - @spreedsheets.each do |spreedsheet| 
           %tr
@@ -29,4 +30,6 @@
               = spreedsheet[:email]
             %td 
               = spreedsheet[:telefone]
+            %td
+              = link_to 'Delete', spreedsheets_destroy_path(spreedsheet.id), { class: 'waves-effect waves-light btn red', method: :delete }
   

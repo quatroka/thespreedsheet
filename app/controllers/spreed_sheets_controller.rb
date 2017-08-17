@@ -7,9 +7,14 @@ class SpreedSheetsController < ApplicationController
     render layout: 'dashboard'
   end
 
+  def destroy
+    SpreedSheet.destroy(params[:id])
+    redirect_to spreedsheets_path
+  end
+
   def import
     SpreedSheet.import(params[:file])
-    redirect_to spreedsheets_path, notice: 'Data imported.'
+    redirect_to spreedsheets_path
   end
 
   private
