@@ -1,3 +1,6 @@
+.row
+  .col.s12
+    %h4.center Add new spreedsheet
 = form_tag spreedsheets_import_path,  multipart: true do
   .row
     .col.s12
@@ -11,15 +14,15 @@
     .col.s12
       .input_field.center
         = submit_tag 'import', { class: 'btn' }
-
+%br
 .row
   .col.s12
     %table.highlight.bordered
       %thead
         %tr
-          %th Nome
+          %th Name
           %th Email
-          %th Telefone
+          %th Phone
           %th Options
       %tbody
         - @spreedsheets.each do |spreedsheet| 
@@ -32,4 +35,3 @@
               = spreedsheet[:telefone]
             %td
               = link_to 'Delete', spreedsheets_destroy_path(spreedsheet.id), { class: 'waves-effect waves-light btn red', method: :delete }
-  
