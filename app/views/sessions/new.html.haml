@@ -1,13 +1,13 @@
 .row
-  = form_tag post_login_path, method: :post do
+  = form_for(:session, url: post_login_path) do |f|
     .row
       .input-field.col.s12
-        = email_field_tag 'email', session[:email], { type: 'email', id: 'email', class: 'validate' }
-        %label{'data-error' => 'Wrong', 'data-success': 'Correct', for: 'email' } Email
+        = f.email_field :email, { id: 'email', class: 'validate' }
+        = f.label :email, {'data-error' => 'Wrong', 'data-success': 'Correct' }
     .row
       .input-field.col.s12
-        = password_field_tag 'password', session[:password], { type: 'password', id: 'password', class: 'validate' }
-        %label{ for: 'password' } Password
+        = f.password_field :password, { id: 'password', class: 'validate' }
+        = f.label :password
     .row
       .col.s12
-        = submit_tag 'Login', { class: 'waves-effect waves-light btn'}
+        = f.submit 'Login', { class: 'waves-effect waves-light btn'}
