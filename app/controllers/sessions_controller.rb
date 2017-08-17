@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
-  def new
-  end
+  def new; end
 
   def create
     user = User.find_by(email: params[:session][:email].downcase)
@@ -11,5 +10,10 @@ class SessionsController < ApplicationController
     else
       render 'layouts/index'
     end
+  end
+
+  def destroy
+    sign_out
+    redirect_to index_path
   end
 end

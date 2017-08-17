@@ -13,7 +13,7 @@
         %a.brand-logo.center{:href => "#"} TSS
         %ul#nav-mobile.right.hide-on-med-and-down
           %li
-            %a{ href: login_path } Login
+            = link_to 'Sign out', sign_out_path, method: :delete
           %li
     .container
       = yield

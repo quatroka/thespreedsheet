@@ -1,5 +1,5 @@
 .row
-  = form_for(:session, url: post_login_path) do |f|
+  = form_for(:session, url: sign_in_path) do |f|
     .row
       .input-field.col.s12
         = f.email_field :email, { id: 'email', class: 'validate' }
