@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'haml-rails'
+gem "iconv", "~> 1.0.3"
 gem 'jquery-rails'
 gem 'materialize-sass'
 gem 'roo'
